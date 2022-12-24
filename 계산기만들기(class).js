@@ -11,7 +11,7 @@ console.log(inputs);
 class Calculator {
     constructor(result) { 
         this.result = result;
-        this.appendthing = []; //''
+        this.appendthing = ''; //''
     };
 
     appendNumber(number) {
@@ -20,11 +20,12 @@ class Calculator {
 
     appendOper(operator) {
         this.appendthing += operator
+        
     };
 
     allclear(){
-        this.appendthing = []; //''
-        this.result.value = 0
+        this.appendthing = ''; //''
+        this.result.value = 0;
     };
 
     
@@ -32,15 +33,27 @@ class Calculator {
     estimate(){ 
         // var x = /[^0-9]/g;
         // this.result.value = this.result.value.replace(x);  
+        try{
+            this.appendthing = eval(this.appendthing); 
+        } catch (err) {
+            this.appendthing = '';
+            this.result.value = 0;
+            alert("수식에 맞게 입력하세요.");
+        };
+        
         // console.log(this.result.value);
-        this.appendthing = eval(this.appendthing); //자체적으로 수식으로 변환하여 계산.. 별로 좋은 함수는 아님
-       
+        //자체적으로 수식으로 변환하여 계산.. 별로 좋은 함수는 아님
+        // if (this.appendthing[0] == ("+","-","*","/")) {
+        //     this.appendthing = '';
+        //     this.result.value = 0;
+        // };
     
     };
     
     
     update(){
         this.result.value = this.appendthing;
+        
         console.log(this.result.value);
     };
 };
@@ -54,7 +67,6 @@ class Calculator {
 // console.log(refine(str));
 // console.log(str);
 // console.log(typeof(str));
-
 
 
 const calculator = new Calculator(inputs); //inputs를 매개변수로 새로운 인스턴스 생성
