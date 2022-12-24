@@ -18,7 +18,7 @@ project execution period : 2022-12-19 ~ 2022-12-23
 
 JavaScript, HTML, CSS 파일로 구성되어 있습니다.
 
-![image](https://user-images.githubusercontent.com/91952020/209426349-b86da7eb-4792-4294-82f7-f6e2891c616c.png)
+![image](https://user-images.githubusercontent.com/91952020/209426613-5b856da8-92c3-4f18-b8d1-78164cc2b307.png)
 
 
 
